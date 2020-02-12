@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 import { fetchTodos } from '../../../shared/actions/todoActions'
+
+const StyledHome = styled.div`
+  color: ${(props) => props.theme.backgroundColour};
+`
 
 class Home extends Component {
   constructor(props) {
@@ -17,11 +22,11 @@ class Home extends Component {
     const { todos } = this.props
 
     return (
-      <>
+      <StyledHome>
         {todos.map((todo) => {
           return <>{todo.title}</>
         })}
-      </>
+      </StyledHome>
     )
   }
 }
