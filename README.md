@@ -1,6 +1,5 @@
 # Get sh*t done boilerplate 
 
-Does what it says on the tin. Comes with: 
 - React
 - Redux
 - React Router 5
