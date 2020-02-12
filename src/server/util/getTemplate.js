@@ -7,7 +7,7 @@
  * @param styleSheets {string}
  * @returns {string}
  */
-export default (reactDOM, reduxState, styleSheets) => {
+export default (reactDOM, reduxState, styleSheets, extractor) => {
   return `
     <!doctype html>
     <html lang="en">
@@ -21,12 +21,11 @@ export default (reactDOM, reduxState, styleSheets) => {
         ${styleSheets}
       </head>
       <body>
-        <div id="app">${reactDOM}<div>
+        <div id="app">${reactDOM}</div>
+        ${extractor.getScriptTags()}
         <script>
-        window.__INITIAL_REDUX__STATE__ = ${JSON.stringify(reduxState)}
+          window.__INITIAL_REDUX__STATE__ = ${JSON.stringify(reduxState)}
         </script>
-        <script src="/dist/app.js" crossOrigin="anonymous" defer async></script>
-        <script src="/dist/vendor.js" crossOrigin="anonymous" defer async></script>
       </body>
     </html>`
 }

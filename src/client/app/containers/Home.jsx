@@ -10,7 +10,7 @@ class Home extends Component {
   static dataNeeds = [fetchTodos]
 
   componentDidMount() {
-    this.props.fetchTodos()
+    if (!this.props.todos.length) this.props.fetchTodos()
   }
 
   render() {

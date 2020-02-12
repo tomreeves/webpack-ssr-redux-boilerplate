@@ -7,6 +7,7 @@ Does what it says on the tin. Comes with:
 - Webpack 4
 - SSR (Express)
 - Styled Components boilerplate
+- Code splitting
 
 Does what it says on the tin. Comes with some exemplar server-side data fetching with Redux.
 
@@ -28,4 +29,3 @@ npm run build
 ## TODO
 - HMR
 - Jest/RTL setup
-- Code splitting

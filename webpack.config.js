@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const __BUILD_DIR__ = path.resolve(__dirname, 'public')
 
 module.exports = {
@@ -7,13 +8,6 @@ module.exports = {
 
   entry: {
     app: ['./client/index.js'],
-    vendor: [
-      'regenerator-runtime',
-      'react',
-      'react-dom',
-      'react-router',
-      'react-router-dom',
-    ],
   },
 
   resolve: {
@@ -25,6 +19,7 @@ module.exports = {
     path: __BUILD_DIR__ + '/dist',
     filename: '[name].js',
     publicPath: '/dist/',
+    chunkFilename: '[id].js',
   },
 
   module: {
@@ -45,5 +40,6 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+    new LoadablePlugin({ writeToDisk: true }),
   ],
 }
