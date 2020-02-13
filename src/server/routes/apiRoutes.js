@@ -1,4 +1,4 @@
-import TestMapper from './mappers/TestMapper'
+import TestMapper from '../mappers/TestMapper'
 
 export default [
   {

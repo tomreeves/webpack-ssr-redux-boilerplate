@@ -1,4 +1,4 @@
-import routes from '../routes'
+import routes from '../routes/apiRoutes'
 import matchPath from '../util/matchPath'
 
 export default (req, res) => {

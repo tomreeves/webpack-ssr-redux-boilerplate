@@ -1,5 +1,5 @@
 import { matchPath } from 'react-router-dom'
-import routes from '../../routes'
+import routes from '../routes/compRoutes'
 
 /**
  * Takes a routes array and works out if it has any `needs`

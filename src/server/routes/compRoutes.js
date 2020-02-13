@@ -1,5 +1,4 @@
-import React from 'react'
-import Home from './client/App/containers/Home.jsx'
+import Home from '../../client/App/containers/Home.jsx'
 
 /**
  * These routes are required server side. We match the path to a
