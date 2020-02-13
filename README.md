@@ -26,5 +26,6 @@ npm run build
 ```
 
 ## TODO
-- HMR
+- HMR for development
 - Jest/RTL setup
+- Fix the precommit hook
