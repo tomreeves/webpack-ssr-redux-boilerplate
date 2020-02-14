@@ -1,10 +1,5 @@
-import lightTheme from './lightTheme'
-import darkTheme from './darkTheme'
-import { themeTypes } from '../client/app/hooks/useTheme/useTheme'
-
-const themes = {
-  [themeTypes.LIGHT]: lightTheme,
-  [themeTypes.DARK]: darkTheme,
+const theme = {
+  backgroundColour: 'red',
 }
 
-export default themes
+export default theme

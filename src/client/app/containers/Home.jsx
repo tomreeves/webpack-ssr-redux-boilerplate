@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { fetchTodos } from '../../../shared/actions/todoActions'
 
 const StyledHome = styled.div`
-  color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.backgroundColour};
 `
 
 class Home extends Component {
@@ -23,8 +23,8 @@ class Home extends Component {
 
     return (
       <StyledHome>
-        {todos.map((todo, i) => {
-          return <div key={i}>{todo.title}</div>
+        {todos.map((todo) => {
+          return <>{todo.title}</>
         })}
       </StyledHome>
     )

@@ -12,8 +12,7 @@ import App from '../client/App.jsx'
 import createStore from '../shared/store'
 import { fetchCompData, getTemplate } from './util'
 import config from './config'
-import themes from '../shared/theme'
-import { defaultTheme } from '../client/App/hooks/useTheme/useTheme'
+import theme from '../shared/theme'
 import apiHandler from './handlers/apiHandler'
 
 const server = express()
@@ -36,7 +35,7 @@ server.get('*', (req, res) => {
     const html = (
       <ReduxProvider store={store}>
         <StaticRouter location={req.path} context={context}>
-          <ThemeProvider theme={themes[defaultTheme]}>
+          <ThemeProvider theme={theme}>
             <App />
           </ThemeProvider>
         </StaticRouter>
