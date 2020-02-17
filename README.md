@@ -5,10 +5,10 @@
 - React Router 5
 - Webpack 4
 - SSR (Express)
-- Styled Components boilerplate
+- Styled Components
 - Code splitting
 
-Does what it says on the tin. Comes with some exemplar server-side data fetching with Redux.
+Probably not production ready and definitely not yet optimised. Threw in a proxy layer for the bants.
 
 Install:
 ```bash
