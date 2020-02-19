@@ -1,8 +1,8 @@
-import routes from '../routes/apiRoutes'
+import apiRoutes from '../../shared/routes/apiRoutes'
 import matchPath from '../util/matchPath'
 
 export default (req, res) => {
-  const mapper = matchPath(routes, req.path)
+  const mapper = matchPath(apiRoutes, req.path)
 
   if (mapper) {
     const handler = new mapper.handler(req)

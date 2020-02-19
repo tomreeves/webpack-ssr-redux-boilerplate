@@ -1,5 +1,5 @@
 import { matchPath } from 'react-router-dom'
-import routes from '../routes/compRoutes'
+import routes from '../../shared/routes/compRoutes'
 
 /**
  * Takes a routes array and works out if it has any `needs`
@@ -11,16 +11,17 @@ import routes from '../routes/compRoutes'
  * @param store {Object}
  * @returns {Promise<Array>}
  */
-export default (path, store) => {
+export default async (path, store) => {
   const matchedRoutes = routes.filter((route) => matchPath(path, route))
 
-  if (matchedRoutes.length === 0) return [false]
+  if (matchedRoutes.length === 0) return
 
-  const dataNeeds = matchedRoutes
-    .map((route) => route.component)
-    .map((comp) => comp.dataNeeds)
+  const matchedComp = matchedRoutes.map((route) => route.component)[0]
+  const loadedComp = await matchedComp.load() // call the Loadable load() method to get the needs
+  const needs = loadedComp.default.dataNeeds
+  const promises = Array.isArray(needs)
+    ? needs.map((need) => store.dispatch(need()))
+    : []
 
-  const promises = dataNeeds[0].map((req) => store.dispatch(req()))
-
-  return promises
+  return await Promise.all(promises)
 }

@@ -1,4 +1,11 @@
-import Home from '../../client/App/containers/Home.jsx'
+import loadable from '@loadable/component'
+
+const Home = loadable(() =>
+  import(/* webpackChunkName: "Home" */ '../../client/app/containers/Home.jsx')
+)
+const Test = loadable(() =>
+  import(/* webpackChunkName: "Test" */ '../../client/app/containers/Test.jsx')
+)
 
 /**
  * These routes are required server side. We match the path to a
@@ -15,8 +22,8 @@ const routes = [
     exact: true,
   },
   {
-    path: '/dynamic-url/:slug',
-    component: Home,
+    path: '/test',
+    component: Test,
   },
 ]
 

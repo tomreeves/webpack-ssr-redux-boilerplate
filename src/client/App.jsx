@@ -1,13 +1,6 @@
 import React from 'react'
 import { Route, Switch, NavLink } from 'react-router-dom'
-import loadable from '@loadable/component'
-
-const Home = loadable(() =>
-  import(/* webpackChunkName: "Home" */ './app/containers/Home.jsx')
-)
-const Test = loadable(() =>
-  import(/* webpackChunkName: "Test" */ './app/containers/Test.jsx')
-)
+import compRoutes from '../shared/routes/compRoutes'
 
 const App = () => {
   return (
@@ -23,8 +16,14 @@ const App = () => {
       </ul>
 
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/test' component={Test} />
+        {compRoutes.map((route, i) => (
+          <Route
+            key={i}
+            exact={route.exact}
+            path={route.path}
+            component={route.component}
+          />
+        ))}
       </Switch>
     </>
   )
