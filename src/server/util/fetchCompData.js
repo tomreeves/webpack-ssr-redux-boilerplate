@@ -4,7 +4,7 @@ import routes from '../../shared/routes/compRoutes'
 /**
  * Takes an incoming request path and matches it to a component.
  *
- * If the component has any data needs on the component (a redux action(s),
+ * If the component has any data needs on the component (a redux action(s)),
  * we dispatch said data needs so that when the component renders on the server,
  * it has all of the information it needs.
  *
