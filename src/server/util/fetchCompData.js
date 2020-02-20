@@ -2,10 +2,11 @@ import { matchPath } from 'react-router-dom'
 import routes from '../../shared/routes/compRoutes'
 
 /**
- * Takes a routes array and works out if it has any `needs`
+ * Takes an incoming request path and matches it to a component.
  *
- * `Needs` are a static array on any given class (and also declared in routes.js)
- * They will populate the store server-side with any provided action(s).
+ * If the component has any data needs on the component (a redux action(s),
+ * we dispatch said data needs so that when the component renders on the server,
+ * it has all of the information it needs.
  *
  * @param path {string}
  * @param store {Object}
