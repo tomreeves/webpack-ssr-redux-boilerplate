@@ -2,7 +2,6 @@ import fetch from 'node-fetch'
 
 export default class ProductMapper {
   constructor(path) {
-    this.path = path
     this.endpoint = 'https://jsonplaceholder.typicode.com/todos/1'
   }
 
