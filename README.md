@@ -28,4 +28,6 @@ npm run build
 ## TODO
 - HMR for development
 - Jest/RTL setup
+- Add tests (server utils, redux)
 - Fix the precommit hook
+- Update the node engine to 12.16.1
