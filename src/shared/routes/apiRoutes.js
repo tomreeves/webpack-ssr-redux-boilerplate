@@ -1,8 +1,10 @@
 import TestMapper from '../../server/mappers/TestMapper'
 
-export default [
+const apiRoutes = [
   {
     path: /^\/api\/test$/,
     handler: TestMapper,
   },
 ]
+
+export default apiRoutes
