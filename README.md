@@ -8,7 +8,7 @@
 - Styled Components
 - Code splitting
 
-Probably not production ready and definitely not yet optimised. Threw in a proxy layer so you can easily collate and map various datasources.
+Probably not production ready and definitely not yet optimised.
 
 Install:
 ```bash
